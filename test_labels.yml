@@ -2,7 +2,7 @@
 
 {% set datastream_build = "build_product " + product %}
 {% set datastream_file = "build/ssg-" + product + "-ds.xml" %}
-{% set target = "--libvirt qemu:///system test-suite-vm" %}
+{% set target = "--libvirt test-suite-" + product %}
 
 prepare_product: build_product {{ product }}
 

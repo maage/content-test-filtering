@@ -80,7 +80,7 @@ class GitDiffWrapper(metaclass=Singleton):
         return build_process.returncode
 
     def build_project(self, old_build_path, new_build_path,
-                      products=["rhel7", "rhel8"]):
+                      products=["fedora"]):
 
         old_build = self.repo_path + old_build_path
         new_build = self.repo_path + new_build_path

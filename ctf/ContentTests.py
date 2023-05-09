@@ -206,9 +206,9 @@ class ContentTests:
         for test_class in self.test_classes:
             if not isinstance(test_class, RulesTest):
                 continue
-            # Workaround to create only one JSON - use rhelX product if possible
-            if test_class.product not in ["rhel9", "rhel8", "rhel7"] and \
-                    product in ["rhel9", "rhel8", "rhel7"]:
+            # Workaround to create only one JSON - use fedora product if possible
+            if test_class.product not in ["fedora"] and \
+                    product in ["fedora"]:
                 test_class.product = product
                 self.products_affected.add(product)
             test_class.rules_set.add(rule)
