@@ -70,8 +70,8 @@ class RulesTest(AbstractTest):
         rules = ", ".join('"' + rule + '"' for rule in self.rules_set)
         rules_tests = self.translate_variable(rules_tests, "%rule_name%", rules)
         for remediation_type in self.remediations:
-            default_setting = '"{}": "False"'.format(remediation_type)
-            new_setting = '"{}": "True"'.format(remediation_type)
+            default_setting = '"{}": false'.format(remediation_type)
+            new_setting = '"{}": true'.format(remediation_type)
             rules_tests = rules_tests.replace(default_setting, new_setting)
         import json
         rules = json.loads(rules_tests)

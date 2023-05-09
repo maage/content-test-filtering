@@ -22,8 +22,8 @@ json_rule: |
   {
     "rules": [ %rule_name% ],
      "product": "{{ product }}",
-     "bash": "False",
-     "ansible": "False"
+     "bash": false,
+     "ansible": false,
   }
 
 json_profile: |
