@@ -1,4 +1,5 @@
 import logging
+import sys
 from abc import abstractmethod
 from ctf.constants import FileType
 
@@ -73,8 +74,12 @@ class RulesTest(AbstractTest):
             default_setting = '"{}": false'.format(remediation_type)
             new_setting = '"{}": true'.format(remediation_type)
             rules_tests = rules_tests.replace(default_setting, new_setting)
-        import json
-        rules = json.loads(rules_tests)
+        try:
+            import json
+            rules = json.loads(rules_tests)
+        except Exception:
+            print(f"ERROR: test_json {rules_tests}", file=sys.stderr)
+            raise
         self.tests = [rules]
         return self.tests
 
